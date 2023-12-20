@@ -2,4 +2,4 @@
 
 using AdventOfCode;
 
-Console.WriteLine(Day1.GetCoordinates());
+Console.WriteLine(Day2.GetPossibleGames());
