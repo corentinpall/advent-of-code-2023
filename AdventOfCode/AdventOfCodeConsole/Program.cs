@@ -2,4 +2,4 @@
 
 using AdventOfCode;
 
-Console.WriteLine(Day2.GetPossibleGames());
+Console.WriteLine(Day3.GetPartNumber());

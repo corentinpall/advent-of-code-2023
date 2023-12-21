@@ -1,6 +1,6 @@
 namespace AdventOfCode;
 
-public class Day2
+public static class Day2
 {
     public static int GetPossibleGames()
     {
