@@ -1,6 +1,6 @@
 namespace AdventOfCode;
 
-public static class Day3
+public abstract class Day3
 {
     public static int GetPartNumber()
     {

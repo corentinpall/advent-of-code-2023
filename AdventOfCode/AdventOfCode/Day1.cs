@@ -2,14 +2,15 @@
 
 namespace AdventOfCode;
 
-public static class Day1
+public abstract class Day1
 {
     private static readonly Dictionary<string, string> Numbers = new()
     {
         { "one", "1" }, { "two", "2" }, { "three", "3" }, { "four", "4" }, { "five", "5" }, { "six", "6" },
         { "seven", "7" }, { "eight", "8" }, { "nine", "9" }
     };
-     public static int GetCoordinates()
+
+    public static int GetCoordinates()
     {
         var lines = File.ReadLines("../../../../AdventOfCode/Inputs/Day1.txt");
         var digitsArr = lines.Select(line => ReplaceNumbers(line).Where(char.IsDigit).ToArray());
@@ -23,16 +24,13 @@ public static class Day1
     private static string ReplaceNumbers(string s)
     {
         var sb = new StringBuilder(s);
-        if (sb.ToString().All(char.IsDigit))
-        {
-            return sb.ToString();
-        }
+        if (sb.ToString().All(char.IsDigit)) return sb.ToString();
         for (var i = 0; i < sb.Length - 2; i++)
         {
             if (char.IsNumber(sb[i])) continue;
             SearchNumberOfSize(ref i, ref sb, 3);
             SearchNumberOfSize(ref i, ref sb, 4);
-            SearchNumberOfSize(ref i, ref sb, 5); 
+            SearchNumberOfSize(ref i, ref sb, 5);
         }
 
         return sb.ToString();

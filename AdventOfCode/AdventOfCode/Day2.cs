@@ -1,13 +1,9 @@
 namespace AdventOfCode;
 
-public static class Day2
+public abstract class Day2
 {
     public static int GetPossibleGames()
     {
-        const int numberOfReds = 12;
-        const int numberOfGreens = 13;
-        const int numberOfBlues = 14;
-
         var ret = 0;
         var lines = File.ReadLines("../../../../AdventOfCode/Inputs/Day2.txt");
 
@@ -16,9 +12,8 @@ public static class Day2
             var maxRed = 0;
             var maxGreen = 0;
             var maxBlue = 0;
-            
+
             var gameSplits = gameString.Split(":");
-            var gameId = int.Parse(string.Concat(gameSplits[0].Where(char.IsDigit)));
             var sets = gameSplits[1].Replace(" ", string.Empty).Split(";");
 
             foreach (var colorsSet in sets)

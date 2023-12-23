@@ -2,4 +2,4 @@
 
 using AdventOfCode;
 
-Console.WriteLine(Day3.GetPartNumber());
+Console.WriteLine(Day4.GetScratchcardPoints());
